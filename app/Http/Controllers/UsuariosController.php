@@ -58,6 +58,24 @@ class UsuariosController extends Controller
         
     }
 
+    public function loginf(Request $request)
+    {
+        $usuario = new Usuarios();
+
+        /*$usuario->username = $request->username;
+        $usuario->email = $request->email;
+        $usuario->password = $request->password;*/
+
+        $usuario = DB::table('usuarios')->where('username','=',$request->username)->Where('password','=',$request->password)->get();
+
+        if($usuario == '[]')
+        {
+            return response()->json(['Mensaje'=>'Registro no encontrado']);;
+        }else{
+            return $usuario;
+        }
+    }
+
     /**
      * Display the specified resource.
      *

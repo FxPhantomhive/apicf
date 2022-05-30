@@ -42,8 +42,13 @@ Route::post('/usuarios', 'App\Http\Controllers\UsuariosController@store'); //Reg
 Ejemplo de endpoint: http://127.0.0.1:8000/api/usuarios       
 */
 
-/*Rutas para acceder a informacion de login */
+/*Rutas para realizar login */
 Route::get('/login/{user}/{pass}', 'App\Http\Controllers\UsuariosController@login'); //Login
+/*
+Ejemplo de endpoint: http://127.0.0.1:8000/api/login/felix/1234f0       
+*/
+
+Route::post('/loginf', 'App\Http\Controllers\UsuariosController@loginf'); //Login usando post
 /*
 Ejemplo de endpoint: http://127.0.0.1:8000/api/login/felix/1234f0       
 */
