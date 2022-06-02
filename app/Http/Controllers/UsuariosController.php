@@ -70,9 +70,9 @@ class UsuariosController extends Controller
 
         if($usuario == '[]')
         {
-            return response()->json(['Mensaje'=>'Registro no encontrado']);;
+            return response()->json($usuario, 400);
         }else{
-            return $usuario;
+            return response()->json($usuario, 200);
         }
     }
 
