@@ -55,6 +55,9 @@ class UsuariosController extends Controller
         $usuario->idPlanes = $request->input('idPlanes');*/
 
         $usuario ->save();
+
+        $usuarioR = DB::table('usuarios')->orderBy('idUsuarios', 'desc')->first();
+        return $usuarioR;
         
     }
 
